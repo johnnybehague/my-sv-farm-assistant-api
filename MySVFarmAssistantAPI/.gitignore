@@ -1,0 +1,36 @@
+# Fichiers spécifiques à l'utilisateur
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Résultats de build
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+# Cache de Visual Studio
+.vs/
+
+# Fichiers de test MSTest
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Fichiers NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+# Fichiers de configuration Azure
+*.azurePubxml
+PublishScripts/
+
+# Node.js et TypeScript
+node_modules/
+typings/
+
+# Autres fichiers inutiles
+*.log
+*.tmp
+*.cachefile

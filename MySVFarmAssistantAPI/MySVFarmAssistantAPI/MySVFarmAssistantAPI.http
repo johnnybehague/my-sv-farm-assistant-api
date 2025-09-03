@@ -1,0 +1,6 @@
+@MySVFarmAssistantAPI_HostAddress = http://localhost:5113
+
+GET {{MySVFarmAssistantAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
