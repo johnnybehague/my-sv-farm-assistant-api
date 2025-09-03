@@ -34,3 +34,4 @@ typings/
 *.log
 *.tmp
 *.cachefile
+/.vs
