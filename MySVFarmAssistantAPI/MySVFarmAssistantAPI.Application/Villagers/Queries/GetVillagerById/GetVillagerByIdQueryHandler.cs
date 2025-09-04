@@ -3,22 +3,22 @@ using MySVFarmAssistantAPI.Application.Villagers.DTO;
 using MySVFarmAssistantAPI.Domain.Villagers.Entities;
 using MySVFarmAssistantAPI.Domain.Villagers.Interfaces;
 
-namespace MySVFarmAssistantAPI.Application.Villagers.Queries;
+namespace MySVFarmAssistantAPI.Application.Villagers.Queries.GetVillagerById;
 
-public class GetAllVillagersQueryHandler : IRequestHandler<GetAllVillagersQuery, IEnumerable<VillagerDto>>
+public class GetVillagerByIdQueryHandler : IRequestHandler<GetVillagerByIdQuery, VillagerDto>
 {
     private readonly IVillagerRepository _repository;
 
-    public GetAllVillagersQueryHandler(IVillagerRepository repository)
+    public GetVillagerByIdQueryHandler(IVillagerRepository repository)
     {
         _repository = repository;
     }
 
-    public async Task<IEnumerable<VillagerDto>> Handle(GetAllVillagersQuery request, CancellationToken cancellationToken)
+    public async Task<VillagerDto> Handle(GetVillagerByIdQuery request, CancellationToken cancellationToken)
     {
-        var entities = await _repository.GetAllAsync(cancellationToken);
-        var dtos = entities.Select(x => GetDtoFromEntity(x)).ToList();
-        return dtos;
+        var entity = await _repository.GetByIdAsync(request.Id, cancellationToken);
+        var dto = GetDtoFromEntity(entity);
+        return dto;
     }
 
     private VillagerDto GetDtoFromEntity(Villager entity)

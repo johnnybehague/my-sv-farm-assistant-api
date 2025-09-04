@@ -1,5 +1,4 @@
 ﻿using MySVFarmAssistantAPI.Domain.Villagers.Entities;
-using MySVFarmAssistantAPI.Domain.WeatherForecast.Entities;
 using MySVFarmAssistantAPI.Infrastructure.Models;
 
 namespace MySVFarmAssistantAPI.Infrastructure.Villagers.Extensions;

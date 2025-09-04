@@ -20,4 +20,10 @@ public class VillagerRepository : IVillagerRepository
         var data = await _context.Villagers.Select(x => x.ToEntity()).ToListAsync(cancellationToken);
         return data;
     }
+
+    public async Task<Villager> GetByIdAsync(int id, CancellationToken cancellationToken = default)
+    {
+        var data = await _context.Villagers.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+        return data.ToEntity();
+    }
 }
