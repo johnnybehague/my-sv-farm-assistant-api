@@ -15,6 +15,12 @@ public static class VillagerExtensions
         {
             Id = model.Id,
             Name = model.Name,
+            Sex = model.Sex,
+            Marriage = model.Marriage == "Y",
+            Birthday = model.Birthday,
+            LivesIn = model.LivesIn,
+            Address = model.Address,
+            ClinicVisit = model.ClinicVisit
         };
     }
 }

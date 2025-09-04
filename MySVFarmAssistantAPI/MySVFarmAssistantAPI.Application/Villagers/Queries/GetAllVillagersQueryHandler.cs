@@ -27,6 +27,12 @@ public class GetAllVillagersQueryHandler : IRequestHandler<GetAllVillagersQuery,
         {
             Id = entity.Id,
             Name = entity.Name,
+            Sex = entity.Sex,
+            Marriage = entity.Marriage,
+            Birthday = entity.Birthday,
+            LivesIn = entity.LivesIn,
+            Address = entity.Address,
+            ClinicVisit = entity.ClinicVisit,
         };
     }
 }

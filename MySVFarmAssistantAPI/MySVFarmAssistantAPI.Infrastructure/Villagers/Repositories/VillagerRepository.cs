@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MySVFarmAssistantAPI.Domain.Villagers.Entities;
 using MySVFarmAssistantAPI.Domain.Villagers.Interfaces;
-using MySVFarmAssistantAPI.Domain.WeatherForecast.Entities;
 using MySVFarmAssistantAPI.Infrastructure.Persistence;
 using MySVFarmAssistantAPI.Infrastructure.Villagers.Extensions;
 
