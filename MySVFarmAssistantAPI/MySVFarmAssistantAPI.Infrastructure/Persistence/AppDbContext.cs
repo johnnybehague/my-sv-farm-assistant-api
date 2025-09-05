@@ -9,9 +9,16 @@ public class AppDbContext : DbContext
 
     public DbSet<WeatherForecastItemModel> WeatherForecastItems { get; set; }
 
+    public DbSet<VillagerModel> Villagers { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<WeatherForecastItemModel>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<VillagerModel>(entity =>
         {
             entity.HasKey(e => e.Id);
         });

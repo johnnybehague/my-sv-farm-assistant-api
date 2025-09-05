@@ -2,8 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using MySVFarmAssistantAPI.Application.WeatherForecast.Factories;
 using MySVFarmAssistantAPI.Application.WeatherForecast.Queries.GetAllWeatherForecast;
 using MySVFarmAssistantAPI.Domain.Common.Interfaces;
+using MySVFarmAssistantAPI.Domain.Villagers.Interfaces;
 using MySVFarmAssistantAPI.Domain.WeatherForecast.Interfaces;
 using MySVFarmAssistantAPI.Infrastructure.Persistence;
+using MySVFarmAssistantAPI.Infrastructure.Villagers.Repositories;
 using MySVFarmAssistantAPI.Infrastructure.WeatherForecast.Repositories;
 using System;
 
@@ -30,9 +32,13 @@ builder.Services.AddScoped<IWeatherForecastFactory, WeatherForecastFactory>();
 
 // Repositories
 builder.Services.AddScoped<IWeatherForecastRepository, WeatherForecastRepository>();
+builder.Services.AddScoped<IVillagerRepository, VillagerRepository>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -40,6 +46,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
